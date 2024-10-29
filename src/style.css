@@ -1,0 +1,112 @@
+/* App.css or style.css */
+
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    overflow: hidden; /* Prevent scrolling */
+    background-color: #282c34; /* Dark background color */
+    color: white; /* Default text color */
+    font-family: Arial, sans-serif; /* Set a nice font */
+}
+
+main {
+    display: flex; /* Use flexbox to center elements if needed */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    position: relative; /* Position relative for absolute positioning within */
+}
+
+h1 {
+    font-size: 24px; /* Heading size */
+    margin: 20px 0; /* Margin for spacing */
+}
+
+.text {
+    font-size: 20px; /* Text size */
+    margin: 0; /* Remove margin */
+}
+
+/* Konva specific styles */
+.konva-stage {
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.7
+    ); /* Slightly transparent background for canvas */
+    border: 1px solid #fff; /* White border around canvas */
+}
+
+/* Optional: Add some styles for branches (Lines) */
+.line {
+    stroke: white; /* Line color */
+    stroke-width: 3; /* Line thickness */
+}
+
+/* Add animation for air effect */
+.air-effect-right {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: -100px; /* Start off-screen to the left */
+    width: 200px; /* Width of the air effect */
+    height: 20px; /* Height of the air effect */
+    background: rgba(173, 216, 230, 0.5); /* Light blue color */
+    border-radius: 10px; /* Rounded corners */
+    animation: moveAirRight 0.5s forwards; /* Trigger the animation */
+}
+
+.air-effect-left {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    right: -100px; /* Start off-screen to the left */
+    width: 200px; /* Width of the air effect */
+    height: 20px; /* Height of the air effect */
+    background: rgba(173, 216, 230, 0.5); /* Light blue color */
+    border-radius: 10px; /* Rounded corners */
+    animation: moveAirLeft 0.5s forwards; /* Trigger the animation */
+}
+
+.air-effect1 {
+    top: 40%; /* Center vertically */
+}
+
+.air-effect2 {
+    top: 60%; /* Center vertically */
+}
+.air-effect3 {
+    top: 30%; /* Center vertically */
+}
+
+main {
+    transition: all 0.5s;
+}
+
+.rotateRight {
+    transform: rotate(1deg);
+}
+
+.rotateLeft {
+    transform: rotate(-1deg);
+}
+@keyframes moveAirRight {
+    0% {
+        left: -100px; /* Start from off-screen left */
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        left: 100%; /* Move to off-screen right */
+        opacity: 0; /* Fade out */
+    }
+}
+
+@keyframes moveAirLeft {
+    0% {
+        right: -100px; /* Start from off-screen left */
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        right: 100%; /* Move to off-screen right */
+        opacity: 0; /* Fade out */
+    }
+}
