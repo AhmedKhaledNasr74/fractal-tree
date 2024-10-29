@@ -25,7 +25,7 @@ function App() {
         { x: number; y: number }[]
     >([]); // Store multiple falling circles
 
-    const [velocity, setVelocity] = useState(0.05); // Control the speed of movement
+    const [velocity] = useState(0.05); // Control the speed of movement
 
     // Function to move circles down when falling is triggered
     useEffect(() => {
@@ -180,7 +180,7 @@ function App() {
         >
             <Stage width={window.innerWidth} height={window.innerHeight}>
                 <Layer>
-                    {branches.map((branch, index) =>
+                    {branches.map((branch) =>
                         branch.level === 5 ? (
                             <>
                                 <Line
@@ -216,6 +216,7 @@ function App() {
                                 y={circle.y}
                                 radius={10}
                                 fill="red"
+                                key={index}
                             />
                         ))}
                 </Layer>
